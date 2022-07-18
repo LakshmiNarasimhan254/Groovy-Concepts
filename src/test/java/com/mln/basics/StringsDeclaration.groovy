@@ -32,7 +32,7 @@ def s1 = /this is a blue sky/
 println s1
 
 //dollar slashy $/..../$
-def s2 = $/this is a green sky/$
+def s2 = $/this is a green sky ${s1}/$
 println s2
 
 
@@ -42,5 +42,5 @@ def s3 = "My Name is \"Lakshmi\""
 println s3
 
 //instead of above we can do something like this
-def s4 = /My Name is "Lakshmi"/
+def s4 = /My Name is "Lakshmi" ${s3}/
 println s4
