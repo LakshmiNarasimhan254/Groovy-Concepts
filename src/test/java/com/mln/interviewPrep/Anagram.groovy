@@ -13,7 +13,7 @@ words.add("Grab")
 words.add("Act")
 words.add("Robed")
 words.add("Vase")
-words.add("Glean")
+words<<"Glean"//This is also way off adding 
 words.add("Desserts")
 words.add("Tar")
 words.add("Arc")
@@ -21,8 +21,7 @@ words.add("Elbow")
 words.add("State")
 words.add("Cider")
 words.add("Dusty")
-words.add("Night")
-words.add("Inch")
+words = words + ["Night","Inch"]//This is also way off adding 
 words.add("Brag")
 words.add("Cat")
 words.add("Bored")
@@ -33,7 +32,8 @@ words.add("Streseed")
 String FirstWord
 String SecondWord
 
-List anagramPairs = new ArrayList()
+Set anagramSet = new HashSet()
+
 
 for (int i=0; i<words.size()-1;i++){
 	FirstWord = words[i]
@@ -45,19 +45,22 @@ for (int i=0; i<words.size()-1;i++){
 			chSecondWord= SecondWord.toLowerCase().toCharArray()
 			Arrays.sort(chFirstWord)
 			Arrays.sort(chSecondWord)
+			
 			if(chFirstWord.toString().equals(chSecondWord.toString())){
 				List anagramPair = new ArrayList()
 				anagramPair.add(FirstWord)
 				anagramPair.add(SecondWord)
-				anagramPairs.add(anagramPair)
+				Collections.sort(anagramPair)
+				anagramSet.add(anagramPair)
 				
 			}
 		}
 		
 	}
 	
+	
 }
-
+List anagramPairs = new ArrayList(anagramSet)
 println anagramPairs
 
 
