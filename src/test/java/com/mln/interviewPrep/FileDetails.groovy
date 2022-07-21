@@ -1,6 +1,6 @@
 package com.mln.interviewPrep
 
-String myFilePath = "Data.txt"
+String myFilePath = "WriteData.txt"
 File myFile = new File(myFilePath)
 
 println ($/The Absolute path of $myFilePath : is " ${myFile.absolutePath} "/$)
@@ -11,7 +11,7 @@ def WordCount = myFile.getText().split(" ").size()
 int ParaCount = 0
 myFile.eachLine
 {Lines->
-	if (Lines.equals("")){
+	if (Lines.trim().equals("")){
 		ParaCount =ParaCount+1
 	}
 }

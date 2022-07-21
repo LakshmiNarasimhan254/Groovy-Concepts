@@ -110,3 +110,12 @@ println "*************************************"
 myDir = new File (myFile.getAbsolutePath().minus("\\Data.txt"))
 println ("The List of files in ${myFile.getAbsolutePath().minus("\\Data.txt")} are ${myDir.list()} ")
 println "*************************************"
+
+
+
+//Get Absolute path recucrsively
+myDir.eachFileRecurse{myFiles->println myFiles.absolutePath}
+	
+	
+	
+	
